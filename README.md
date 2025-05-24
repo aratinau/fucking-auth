@@ -1,4 +1,16 @@
-Welcome to your new TanStack app! 
+# Fucking Auth
+
+- tanstack router
+- tanstack form
+- tanstack table
+- tanstack query
+- upfetch
+
+
+- jwt token
+- refresh token 
+
+- nuqs?
 
 # Getting Started
 

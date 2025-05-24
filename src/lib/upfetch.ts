@@ -1,5 +1,4 @@
 import { up } from 'up-fetch'
-import { env } from "@/env";
 import {authUtils} from "@/utils/auth.ts";
 
 let refreshInProgress = false
