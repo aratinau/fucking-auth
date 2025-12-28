@@ -1,6 +1,6 @@
-import { useRouter } from '@tanstack/react-router'
-import { Auth } from './Auth'
-import { useMutation } from '@tanstack/react-query';
+import {useRouter} from '@tanstack/react-router'
+import {Auth} from './Auth'
+import {useMutation} from '@tanstack/react-query';
 import {authUtils} from "@/utils/auth.ts";
 
 
@@ -11,7 +11,7 @@ export function Login() {
     mutationFn: async ({data}) => {
       const {email, password} = data
 
-      const res = await fetch('https://localhost/api/login_check', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/login_check`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email, password}),
@@ -29,7 +29,7 @@ export function Login() {
       authUtils.setAuthData('is_authenticated', 'true')
 
       // Rediriger vers la page d'accueil ou dashboard après connexion
-      router.navigate({ to: '/' }); // ou '/dashboard'
+      router.navigate({to: '/'}); // ou '/dashboard'
     },
     onError: (error) => {
       console.error('Erreur de connexion:', error);
@@ -65,17 +65,17 @@ export function Login() {
                       (e.target as HTMLButtonElement).form!,
                     )
 
-                    console.log("ok")
-                  }}
-                  type="button"
-                >
-                  Sign up instead?
-                </button>
-              </div>
-            ) : null}
-          </>
-        ) : null
-      }*/
+              console.log("ok")
+            }}
+            type="button"
+          >
+            Sign up instead?
+          </button>
+        </div>
+      ) : null}
+    </>
+  ) : null
+}*/
     />
   )
 }
